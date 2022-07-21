@@ -8,9 +8,29 @@
 
     //ENTRADA
 
+    const quantosDeCombustivel =  Number(prompt("quanto de gasolina: (até 40)."))
+
+    const precoDoCombustivel = Number(prompt("preco do combustivel: "))
+
+    const dinheiroQueVoceTem = Number(prompt("quanto de dinheiro que você tem: "))
 
     //PROCESSAMENTO
 
+    if(quantosDeCombustivel <= 40){
+
+        const precoTotaldoCombustivel = precoDoCombustivel * quantosDeCombustivel
+
+        const dinheiroQueSobrou = dinheiroQueVoceTem - precoTotaldoCombustivel
+
+        if(dinheiroQueSobrou >= 0){
+            document.write(`Muito obrigado volte sempre saldo restante: ${dinheiroQueSobrou}`)
+        }else{
+            document.write(`dinheiro não foi o suficiente, voce esta devento: ${dinheiroQueSobrou}`)
+        }
+
+    }else{
+        document.write("você ta passando os limites!")
+    }
     
     //SAÍDA
 

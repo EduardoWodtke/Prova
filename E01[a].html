@@ -12,9 +12,27 @@
 
     //ENTRADA
 
+    const quantidadeDeAulaPorSemana = parseInt(prompt("quantas aulas você vai leciona por semana?"))
+
+    const quantidadeDeProjetoQueOrienta = parseInt(prompt("quantos projeto você orienta?"))
 
     //PROCESSAMENTO
 
+    
+        const horasDeAula = (quantidadeDeAulaPorSemana * 90) / 60
+        const horasDeProjeto = (quantidadeDeProjetoQueOrienta * 180) / 60
+        const totalDeHoras = (horasDeAula + horasDeProjeto)
+    if(totalDeHoras > 30 && totalDeHoras <=40){
+        if(horasDeAula > horasDeProjeto){
+            document.write(`professor (${horasDeAula}) > pesquisador(${horasDeProjeto}), total de horas: (${totalDeHoras})`)
+        }else{
+            document.write(`pesquisador (${horasDeProjeto}) > professor (${horasDeAula}) total de horas: (${totalDeHoras})`)
+        }
+    }else if (totalDeHoras > 40 ){
+        document.write(`Rever o contrato total de horas: (${totalDeHoras})`)
+    } else{
+        document.write(`trabalhe mais total de horas: (${totalDeHoras})`)
+    }
     
     //SAÍDA
 

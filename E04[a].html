@@ -13,10 +13,41 @@
 
     //ENTRADA
 
+    const precoDolarReal = Number(prompt("Dolar para real"))
+
+    const precoEuroReal = Number(prompt("Euro para real"))
+
+    const passagemAereaP = Number(prompt("passagem aerea até portugal euro"))
+
+    const passagemAereaE = Number(prompt("passagem aerea até EU em dolar"))
+
+    let reaisDisponivel = Number(prompt("quantos reias tem disponível"))
 
     //PROCESSAMENTO
 
+    const precoPassagemRealE = precoDolarReal * passagemAereaE
+
+    const precoPassagemRealP = precoEuroReal * passagemAereaP
+
+    reaisDisponivel = reaisDisponivel - precoPassagemRealE
+
+    const dolar = reaisDisponivel
+
+    reaisDisponivel = reaisDisponivel - precoPassagemRealP
+
+    const euro = reaisDisponivel
     
+    if  (dolar >= precoPassagemRealE && euro  >= precoPassagemRealP){
+        const totalSaldo = reaisDisponivel + reaisDisponivel
+        document.write(`parabéns você pode viajar para os dois, saldo restante ${totalSaldo}`)
+    } else if  (dolar >= precoPassagemRealE && euro < precoPassagemRealP){
+        document.write(`você só pode ir para Estados unidos saldo restante ${reiasDiposnivelE}.`)
+    } else if  (dolar < precoPassagemRealE && euro >= precoPassagemRealP){
+        document.write(`você só pode ir para Portugal, saldo restante ${reaisDisponivelP}.`)
+    } else {
+        const totalSaldo = reaisDisponivel + reaisDisponivel
+        document.write(`nem um nem outro B(, saldo insuficiente ${totalSaldo}`)
+    }
     //SAÍDA
 
 
