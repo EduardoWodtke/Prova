@@ -13,26 +13,24 @@
 
     const tempoTotalViagem = Number(prompt("tempo total da viagem?"))
 
-    let diaria = 150
     //PROCESSAMENTO
 
-    const diasDeViagem = Math.ceil(tempoTotalViagem / quantasHorasConsegueViajar)
+    let diaria = 150;
+    const diasViagem = Math.ceil(quantasHorasConsegueViajar / tempoTotalViagem)
+    let valorTotalDiarias;
 
-    if(diasDeViagem === 1){
-        document.write(`${diasDeViagem} dias de viagem, diaria foi: ${diaria}`)
-    } else if (diasDeViagem >= 2 && diasDeViagem <= 3){
-        diaria = diaria + (diaria * 0.15)
-        document.write(`${diasDeViagem} dias de viagem, diaria foi: ${diaria}`)
-    } else if (diasDeViagem >= 4 && diasDeViagem <= 5){
-        diaria = diaria + (diaria * 0.1)
-        document.write(`${diasDeViagem} dias de viagem, diaria foi: ${diaria}`)
-    } else{
-        diaria = diaria + (diaria * 0.05)
-        document.write(`${diasDeViagem} dias de viagem, diaria foi: ${diaria}`)
+    if (diasViagem === 1){
+        valorTotalDiarias = diaria
+    } else if (diasViagem <= 3){
+        valorTotalDiarias = diaria * 1.15
+    } else if (diasViagem <= 5){
+        valorTotalDiarias = diaria * 1.1
+    } else {
+        valorTotalDiarias = diaria * 1.05
     }
-    
     //SAÍDA
-    
+
+    document.write(`o custo total da viagem é R$${valorTotalDiarias.toFixed(2)} e vai demorar ${diasViagem}.`);
 
 
 </script>
